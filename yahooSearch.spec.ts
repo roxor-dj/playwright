@@ -1,7 +1,7 @@
 import { test, expect} from '@playwright/test';
 
 
-test('Validate googleSearchFields', async ({ page }) => {
+test('Validate yahooSearchFields', async ({ page }) => {
     
     // 1.Go to Google.com
     await page.goto('https://www.yahoo.com/');
