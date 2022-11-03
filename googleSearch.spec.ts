@@ -14,6 +14,7 @@ test('Validate googleSearchFields', async ({ page }) => {
     field =  page.locator('#ybar-sbq').click;
 
     // 4.In search field put Crypto
+    // <em>   TypeError: field.fill is not a function </em>
     await field.fill('Crypto');
     
     // 5.Click on magnifier glass
