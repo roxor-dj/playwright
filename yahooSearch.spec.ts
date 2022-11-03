@@ -1,7 +1,7 @@
 import { test, expect} from '@playwright/test';
 
 
-test('Validate yahooSearchFields', async ({ page }) => {
+test('Validate googleSearchFields', async ({ page }) => {
     
     // 1.Go to Google.com
     await page.goto('https://www.yahoo.com/');
@@ -10,20 +10,23 @@ test('Validate yahooSearchFields', async ({ page }) => {
     await expect(page).toHaveTitle(/Yahoo/);
 
     // 3.Find and Click on Search Field
-    let field : any = {};
-    field =  page.locator('#ybar-sbq').click;
+    //let field : any = {};
+    //field =  page.locator('#ybar-sbq').click;
 
     // 4.In search field put Crypto
-    //  In this point my test fail - TypeError: field.fill is not a function 
-    await field.fill('Crypto');
+    let pojam : any = {};
+    pojam = page.locator('#ybar-sbq');
+    await pojam.fill('Crypto');
     
     // 5.Click on magnifier glass
     let glass : any = {};
     glass = page.locator('#ybar-search').click;
 
     // 5. Assertion
-    // Here I need help
+    
     //await expect(page).toContain('/.*cols');
+    //await expect.soft(page.locator('.cols')).toHaveText('Cryptocurrency');
+    //await expect.soft(page.locator('.cols')).toHaveText('Crypto');
     
 
    await page.waitForTimeout(5000);
